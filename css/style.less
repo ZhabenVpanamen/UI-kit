@@ -1,0 +1,141 @@
+//color
+@dark: #1F2041;
+@dark75: rgba(31, 32, 65, 0.75);
+@dark50: rgba(31, 32, 65, 0.50);
+@dark25: rgba(31, 32, 65, 0.25);
+@dark5: rgba(31, 32, 65, 0.05);
+@purple: #BC9CCF;
+@green: #6FCF97;
+
+//global styles
+*{
+  font-family: 'Montserrat', sans-serif;
+  color: @dark;
+	line-height: 28px;
+	font-weight: 400;
+}
+
+//styles
+
+.header{
+	padding-top: 30px;
+}
+
+.container{
+  max-width: 1920px;
+  padding: 0 30px 0 30px;
+}
+
+.content{
+	margin-top: 67px;
+	display: flex;
+}
+
+.content-items{
+	width: 50%;
+	&__color-column{
+		margin-left: 120px;
+	}
+	&__font-column{
+		max-width: 436px;
+		margin: auto;
+	}
+}
+
+.content-item{
+	display: flex;
+	height: 70px;
+	margin-bottom: 20px;
+	align-items: center;
+	&__color-block{
+		margin-right: 40px;
+		width: 70px;
+		height: inherit;
+		border-radius: 6px;
+		//modifiers
+		&_color_dark100{
+			background: @dark;
+		}
+		&_color_dark75{
+			background: @dark75;
+		}
+		&_color_dark50{
+			background: @dark50;
+		}
+		&_color_dark25{
+			background: @dark25;
+		}
+		&_color_dark5{
+			background: @dark5;
+		}
+		&_color_purple{
+			background: @purple;
+		}
+		&_color_green{
+			background: @green;
+		}
+	}
+	&__font-type{
+		margin-right: 30px;
+		min-width: 50px;
+		text-align: right;
+		color: @dark25;
+	}
+	&__font-example{
+		&_font-weight_bold{
+			font-weight: 700;
+		}
+	}
+	//modifiers
+	&_font-size_h1{
+		font-size: 24px;
+	}
+	&_font-size_h2{
+		font-size: 19px;
+	}
+	&_font-size_h3{
+		font-size: 12px;
+	}
+	&_font-size_body{
+		font-size: 14px;
+	}
+	&_font_bold{
+		font: bold;
+	}
+}
+
+//media
+
+@media (max-width: 1200px) {
+  .content-items__color-column{
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 960px) {
+  .content-items__color-column{
+    margin-left: 0;
+  }
+  .content-items__font-column{
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .content{
+		display: block;
+	}
+  .content-items
+  {
+  	width: auto;
+  	&:first-child{
+  		margin-bottom: 80px;
+  	}
+  }
+}
+
+@media (max-width: 576px) {
+	.content-item{
+		margin-bottom: 50px;
+	}
+}
