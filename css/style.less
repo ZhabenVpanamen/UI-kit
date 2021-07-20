@@ -11,24 +11,35 @@
 *{
   font-family: 'Montserrat', sans-serif;
   color: @dark;
-	line-height: 28px;
 	font-weight: 400;
 }
 
-//styles
-
 .header{
 	padding-top: 30px;
+	& svg{
+    cursor: pointer;
+  }
 }
 
 .container{
+	margin: auto;
   max-width: 1920px;
   padding: 0 30px 0 30px;
 }
 
+//styles
+
 .content{
-	margin-top: 67px;
 	display: flex;
+	&__page-one{
+		margin-top: 67px;
+		line-height: 28px;
+	}
+	&__page-two{
+		margin-top: 62px;
+		justify-content: space-between;
+		line-height: 15px;
+	}
 }
 
 .content-items{
@@ -138,4 +149,127 @@
 	.content-item{
 		margin-bottom: 50px;
 	}
+}
+
+//page2
+.form-items{
+  &_size_s{
+    width: 150px;
+    display: inline-block;
+    margin: auto;
+    &:nth-child(2n){
+    	float: right;
+    }
+  }
+  &_size_m{
+    width: 266px;
+  }
+  &_size_l{
+    width: 320px;
+  }
+}
+
+.form-items{
+  &__form-elements{
+    padding-top: 20px;
+    &:first-child{
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.form-items-block{
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  &__headig{
+    font-weight: bold;
+  }
+
+  &__condition{
+    color: @dark50;
+  }
+  
+  &__input{
+    box-sizing: border-box;
+    height: 44px;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 12px;
+    width: 100%;
+    &_default{
+      border: 1px solid @dark25;
+      &::placeholder{color: @dark25;}
+    }
+    &_hover{
+      border: 1px solid @dark50;
+      &::placeholder{color: @dark75;}
+    }
+    &_dropdown{
+      border: 1px solid @dark25;
+      &::placeholder{color: @dark75;}
+    }
+  }
+  
+  &__input-element{
+    position: relative;
+  }
+  &__input-arrow{
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    &_direction_down{
+      &::after{
+      	position: absolute;
+      	left: 50%;
+      	top: 50%;
+      	content:"";
+      	display: block;
+	      width: 8px;
+	      height: 8px;
+	      border-bottom: 2px solid @dark50;
+	      border-right: 2px solid @dark50;
+	      transform: rotate(45deg) translate(-71%, 0);
+    	}
+    }
+    &_direction_right{
+      &::after{
+      	position: absolute;
+      	left: 50%;
+      	top: 50%;
+      	content:"";
+      	display: block;
+	      width: 8px;
+	      height: 8px;
+	      border-bottom: 2px solid @purple;
+	      border-right: 2px solid @purple;
+	      transform: rotate(-45deg) translate(0%,-71%);
+    	}
+    	&::before{
+      	position: absolute;
+      	left: 25%;
+      	top: 50%;
+      	content:"";
+      	display: block;
+	      width: 16px;
+	      border-bottom: 2px solid @purple;
+	      transform: translateY(-50%);
+    	}
+    }
+  }
+  
+  &__form-bottom{
+    .form-items-block{
+      margin-top: 40px;
+    }
+  }
 }
